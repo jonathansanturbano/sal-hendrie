@@ -1,0 +1,20 @@
+.menu{
+  margin: 2rem;
+}
+
+.menu > * {
+  color: rgb(177, 160, 1);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.1rem 1rem;
+  border-right: rgb(177, 160, 1) solid 2px;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(177, 160, 1);
+  }
+}
+
+.menu > *:last-child {
+  border: none;
+}
