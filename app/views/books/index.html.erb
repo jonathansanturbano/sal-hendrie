@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h1 class="page-intro">Here’s a look at different novels brought to you by Sal Hendrie...</h1>
+  <div class="books">
+    <% @books.each do |book| %>
+      <div class="book">
+        <%= image_tag 'boyandtoad.jpg', size: "240x180" %>
+        <div class="book-information">
+          <div class="button" id="button-book">Buy Now</div>
+          <h3><%= book.title %><span class="badge">  ($<%= book.price %>) </span></h3>
+          <p class="book-year"><%= book.year %></p>
+          <p class="book-description"><%= book.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
