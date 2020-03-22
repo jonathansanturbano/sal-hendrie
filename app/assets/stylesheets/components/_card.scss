@@ -1,0 +1,21 @@
+.card{
+  overflow: hidden;
+  height: 120px;
+  background: rgb(198, 198, 198);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: inherit;
+  margin: 2rem 0;
+  border: none;
+}
+
+.date{
+  background-color: rgb(192, 187, 143);
+  padding: 40px;
+  margin: 7px;
+}
+
+.event-description{
+  padding: 1rem;
+}

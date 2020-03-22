@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h1 class="page-intro">Here are some upcoming events...</h1>
+  <div class="cards">
+    <% @events.each do |event| %>
+      <div class="card">
+        <div class="date">
+          <p><<%= event.time %></p>
+        </div>
+        <div class="event-description"><%= event.description %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
