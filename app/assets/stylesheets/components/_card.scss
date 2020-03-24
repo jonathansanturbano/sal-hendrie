@@ -11,9 +11,17 @@
 }
 
 .date{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: rgb(192, 187, 143);
-  padding: 40px;
-  margin: 7px;
+  margin: 0px;
+  width: 220px;
+  height: 100%;
+
+  p{
+    margin: 0;
+  }
 }
 
 .event-description{

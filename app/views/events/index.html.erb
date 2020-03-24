@@ -4,9 +4,12 @@
     <% @events.each do |event| %>
       <div class="card">
         <div class="date">
-          <p><<%= event.time %></p>
+          <p><%= event.time.strftime('%a %-d %B %Y').upcase %></p>
+          <p><%= event.time.strftime('%n %kH%M %p') %></p>
         </div>
-        <div class="event-description"><%= event.description %></div>
+        <div class="event-description">
+          <%= event.description %>
+        </div>
       </div>
     <% end %>
   </div>
