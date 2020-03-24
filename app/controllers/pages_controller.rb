@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def bio
+    @illustrators = Illustrator.all
   end
 end
