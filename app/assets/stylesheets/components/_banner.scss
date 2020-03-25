@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: bottom right;
   padding: 50px 0;
-  background-image: url('https://res.cloudinary.com/dkbvm5myl/image/upload/v1585133804/e9ioevur6x43gsuplv6v.gif');
+  background-image: url('<%= cl_image_tag "boyandtoadbanner.gif"');
   transform: rotate(180deg);
   margin-bottom: 3rem;
 }
