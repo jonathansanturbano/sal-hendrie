@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: bottom right;
   padding: 50px 0;
-  background-image: url('<%= cl_image_tag("boyandtoadbanner.gif")');
+  background-image: url('<%= cl_image_path("boyandtoadbanner.gif")');
   transform: rotate(180deg);
   margin-bottom: 3rem;
 }
