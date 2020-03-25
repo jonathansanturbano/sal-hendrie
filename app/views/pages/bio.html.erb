@@ -6,8 +6,10 @@
   <h2 class="illustrator-title">The Illustrators</h2>
 
   <% @illustrators.each do |illustrator| %>
-    <%= image_tag "Nguyen.jpg" %>
-    <h3 class="illustrator-name"><%= illustrator.name %></h3>
-    <p><%= illustrator.description %></p>
+    <div class="illustrator-card">
+      <%= image_tag "Nguyen.jpg" %>
+      <h3><%= illustrator.name %></h3>
+      <p><%= illustrator.description %></p>
+    </div>
   <% end %>
 </div>

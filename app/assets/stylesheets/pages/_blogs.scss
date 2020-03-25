@@ -1,0 +1,28 @@
+.blog-cards {
+  a{
+    text-decoration: none;
+  }
+}
+
+.blog-card{
+  background: rgb(198, 198, 198);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  color: black;
+  padding: 1rem;
+  margin: 2rem 0;
+  position: relative;
+
+  h2{
+    font-weight: bold;
+  }
+
+  h3{
+    font-style: italic;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgba(192, 187, 143, 0.5);
+  }
+}
