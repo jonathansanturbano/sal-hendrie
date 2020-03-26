@@ -1,0 +1,17 @@
+<div class="text-center">
+
+  <h1 class="page-intro">Here are different mementos to remember Canalia by...</h1>
+
+  <div class="goodie-cards">
+
+    <% @goodies.each do |goodie| %>
+      <div class="goodie-card">
+        <%= cl_image_tag goodie.photo.key, size:"250x250" %>
+        <h3><%= goodie.title %></h3>
+        <p>$<%= goodie.price %></p>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

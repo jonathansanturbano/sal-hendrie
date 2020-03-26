@@ -26,3 +26,15 @@
     background-color: $mid-blue;
   }
 }
+
+.blog-title{
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  margin: 2rem 0;
+}
+
+.blog-content{
+  text-align: justify;
+}

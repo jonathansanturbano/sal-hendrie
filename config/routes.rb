@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'goodies/index'
+  get 'goodies/show'
   get 'blogs/index'
   get 'blogs/show'
   root to: 'pages#home'
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :blogs, only: [:index, :show]
   resources :fanarts, only: [:index]
+  resources :goodies, only: [:index, :show]
 end
