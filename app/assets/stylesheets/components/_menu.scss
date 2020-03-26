@@ -1,3 +1,22 @@
+.home-button{
+  text-align: center;
+}
+
+.home{
+  margin: 1rem;
+  text-align: center;
+  color: $yellow;
+  font-size: 1.3rem;
+  padding: 0.1rem 1rem;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: rgb(177, 160, 1);
+  }
+}
+
 .menu{
   margin: 2rem;
   text-align: center;
@@ -13,7 +32,7 @@
 
   &:hover {
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: rgb(177, 160, 1);
   }
 }
