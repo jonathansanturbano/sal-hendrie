@@ -5,7 +5,7 @@
 }
 
 .blog-card{
-  background: rgb(198, 198, 198);
+  background: $light-blue;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   color: black;
   padding: 1rem;
@@ -23,6 +23,6 @@
     top: 0;
     left: 0;
     padding: 1rem;
-    background-color: rgba(192, 187, 143, 0.5);
+    background-color: $mid-blue;
   }
 }
