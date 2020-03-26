@@ -1,7 +1,7 @@
 puts "Deleting all seeds"
 
 Book.destroy_all && Event.destroy_all && Illustrator.destroy_all &&
-Blog.destroy_all if Rails.env.development?
+Blog.destroy_all && Fanart.destroy_all if Rails.env.development?
 
 puts "Creating all seeds"
 
@@ -18,3 +18,18 @@ Event.create!(time: DateTime.new(2019, 10, 03, 8, 0), description: "Great event 
 Event.create!(time: DateTime.new(2020, 05, 06, 12, 0), description: "Great event to attend you should definitely come at this time and date in Berlin")
 
 Event.create!(time: DateTime.new(2020, 03, 24, 15, 30), description: "Great event to attend you should definitely come at this time and date in Budapest")
+
+fanart1 = Fanart.new(author: "Le Thu")
+fanart_photo_1 = File.open(Rails.root + "app/assets/images/Fan Art/Pencil.jpg")
+fanart1.photo.attach(io: fanart_photo_1, filename: 'Le_Thu.jpg', content_type: 'image/jpg')
+fanart1.save
+
+fanart2 = Fanart.new(author: "Hà Nam Huong")
+fanart_photo_2 = File.open(Rails.root + "app/assets/images/Fan Art/Street.jpg")
+fanart2.photo.attach(io: fanart_photo_2, filename: 'Ha_Nam_Huong.jpg', content_type: 'image/jpg')
+fanart2.save
+
+fanart3 = Fanart.new(author: "Bicycle")
+fanart_photo_3 = File.open(Rails.root + "app/assets/images/Fan Art/Bicycle.jpg")
+fanart3.photo.attach(io: fanart_photo_3, filename: 'Bicycle.jpg', content_type: 'image/jpg')
+fanart3.save

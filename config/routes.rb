@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
   resources :blogs, only: [:index, :show]
+  resources :fanarts, only: [:index]
 end

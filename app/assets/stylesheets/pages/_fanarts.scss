@@ -1,0 +1,14 @@
+.fanart-cards{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.fanart-card{
+  margin: 0rem 1rem;
+
+  p{
+    font-style: italic;
+  }
+}
