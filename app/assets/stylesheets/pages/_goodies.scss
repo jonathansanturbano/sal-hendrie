@@ -1,6 +1,7 @@
 .goodie-cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 
 .goodie-card{
@@ -9,7 +10,7 @@
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  margin: 30px;
+  justify-self: center;
 
   h3{
     margin: 1rem 0;
@@ -18,5 +19,12 @@
 
   p{
     font-style: italic;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .goodie-cards{
+    grid-template-columns: 1fr;
   }
 }

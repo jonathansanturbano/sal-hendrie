@@ -1,18 +1,53 @@
 .fanart-cards{
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // text-align: center;
+  // justify-content: center;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 
 .fanart-card{
-  margin: 0.5rem 1rem;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   border: $mid-blue 1px solid;
   background-color: $light-gray;
+  text-align: center;
 
   p{
     font-style: italic;
     text-decoration: underline;
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .fanart-cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .menu {
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .menu {
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .menu {
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .menu {
   }
 }
