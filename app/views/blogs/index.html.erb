@@ -6,9 +6,9 @@
     <% @blogs.each do |blog| %>
     <%= link_to blog_path(blog) do %>
     <div class="blog-card">
-      <h2><%= blog.title %></h2>
-      <h3><%= blog.updated_at.strftime('%a %-d %B %Y') %></h3>
-      <p><%= blog.content %></p>
+      <h3 class="blog-date"><%= blog.updated_at.strftime('%a %-d %B %Y') %></h3>
+      <h2 class="blog-title"><%= blog.title %></h2>
+      <p class="blog-content"><%= blog.content %></p>
     </div>
     <% end %>
   <% end %>

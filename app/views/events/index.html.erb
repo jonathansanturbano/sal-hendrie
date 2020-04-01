@@ -4,8 +4,8 @@
   <h1 class="page-intro">Fancy meeting Sal Hendrie?</h1>
   <div class="cards">
     <% @events.each do |event| %>
-      <div class="card">
-        <div class="date">
+      <div class="event-card">
+        <div class="event-date">
           <p><%= event.time.strftime('%a %-d %B %Y')%></p>
           <p><%= event.time.strftime('%n %kH%M %p') %></p>
         </div>

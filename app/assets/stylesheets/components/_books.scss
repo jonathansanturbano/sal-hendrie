@@ -1,5 +1,4 @@
 .book{
-  display: flex;
   background: $mid-blue;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
   padding: 1rem;
@@ -13,18 +12,19 @@
 }
 
 .book-information{
-  padding: 0 0 0 1rem;
-  text-align: left;
+  padding: 0;
+  text-align: center;
   position: relative;
 
   h3{
     font-weight: bold;
-    padding: 0;
+    padding-top: 1rem;
     margin: 0;
   }
 
   p{
     margin: 0;
+    padding-bottom: 1rem;
   }
 }
 
@@ -33,13 +33,33 @@
   text-decoration: underline;
 }
 
-.book-description{
-  text-align: justify;
-}
 
-#button-book{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
+
+@media (min-width: 992px){
+  .book{
+    display: flex;
+  }
+  #button-book{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+  .book-information{
+    padding: 0 0 0 1rem;
+    text-align: left;
+
+    h3{
+      padding: 0;
+      margin: 0;
+    }
+
+    p{
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .book-description{
+    text-align: justify;
+  }
 }

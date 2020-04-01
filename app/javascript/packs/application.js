@@ -23,4 +23,6 @@
 import "bootstrap";
 import { initModalOnClick } from '../components/modal';
 
-initModalOnClick();
+if (document.querySelector('#dropdown')) {
+  initModalOnClick();
+};

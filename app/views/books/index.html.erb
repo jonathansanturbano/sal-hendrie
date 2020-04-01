@@ -5,10 +5,10 @@
       <div class="book">
         <%= image_tag 'boyandtoad.jpg', size: "240x180" %>
         <div class="book-information">
-          <div class="button" id="button-book">Buy Now</div>
           <h3><%= book.title %><span class="badge">  ($<%= book.price %>) </span></h3>
           <p class="book-year"><%= book.year %></p>
           <p class="book-description"><%= book.description %></p>
+          <div class="button" id="button-book">Buy Now</div>
         </div>
       </div>
     <% end %>

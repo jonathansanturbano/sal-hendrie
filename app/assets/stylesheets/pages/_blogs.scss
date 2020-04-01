@@ -11,20 +11,14 @@
   padding: 1rem;
   margin: 2rem 0;
   position: relative;
+}
 
-  h2{
-    font-weight: bold;
-  }
-
-  h3{
-    font-style: italic;
-    font-size: 16px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: $mid-blue;
-  }
+.blog-date{
+  font-style: italic;
+  font-size: 16px;
+  top: 0;
+  left: 0;
+  padding: 1rem;
 }
 
 .blog-title{
@@ -35,6 +29,13 @@
   margin: 2rem 0;
 }
 
+
+@media (min-width: 991px) {
+  .blog-date{
+    position: absolute;
+    background-color: $mid-blue;
+  }
 .blog-content{
   text-align: justify;
+  }
 }

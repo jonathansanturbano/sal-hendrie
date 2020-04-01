@@ -1,4 +1,4 @@
-.card{
+.event-card{
   overflow: hidden;
   height: 120px;
   background: $light-blue;
@@ -10,7 +10,7 @@
   border: none;
 }
 
-.date{
+.event-date{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,4 +27,15 @@
 
 .event-description{
   padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  .event-card{
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .event-date{
+    width: 100%;
+  }
 }
