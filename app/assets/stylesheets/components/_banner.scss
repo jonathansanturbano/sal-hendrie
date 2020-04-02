@@ -6,7 +6,6 @@
   // transform: rotate(180deg);
   position: sticky;
   top: 0;
-  z-index: 1;
 
   img{
     vertical-align: middle;
@@ -16,6 +15,7 @@
     object-fit: cover;
     object-position: 0 78%;
     transform: rotate(180deg);
+    z-index: 1;
   }
 }
 
@@ -32,29 +32,5 @@
       object-position: 0 78%;
       transform: rotate(180deg);
     }
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .banner {
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .banner {
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .banner {
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .banner {
   }
 }
