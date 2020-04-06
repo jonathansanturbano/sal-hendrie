@@ -7,7 +7,7 @@
 
     <% @goodies.each do |goodie| %>
       <div class="goodie-card">
-        <%= cl_image_tag goodie.photo.key, size:"250x250" %>
+        <%= cl_image_tag goodie.photos.first.key, size:"250x250" %>
         <h3><%= goodie.title %></h3>
         <p>$<%= goodie.price %></p>
       </div>

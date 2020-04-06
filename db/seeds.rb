@@ -1,7 +1,7 @@
 puts "Deleting all seeds"
 
 Book.destroy_all && Event.destroy_all && Illustrator.destroy_all &&
-Blog.destroy_all && Fanart.destroy_all && Goodie.destroy_all if Rails.env.development?
+Blog.destroy_all && Fanart.destroy_all && Goodie.destroy_all && User.destroy_all if Rails.env.development?
 
 puts "Creating all seeds"
 
@@ -36,20 +36,22 @@ fanart3.save
 
 goodie1 = Goodie.new(title: "Set of 4 Postcards", price: 5.99)
 goodie1_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg")
-goodie1.photo.attach(io: goodie1_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
+goodie1.photos.attach(io: goodie1_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie1.save
 
 goodie2 = Goodie.new(title: "Set of 6 Postcards", price: 7.99)
 goodie2_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg")
-goodie2.photo.attach(io: goodie2_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
+goodie2.photos.attach(io: goodie2_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie2.save
 
 goodie3 = Goodie.new(title: "Set of 8 Postcards", price: 9.99)
 goodie3_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg")
-goodie3.photo.attach(io: goodie3_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
+goodie3.photos.attach(io: goodie3_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie3.save
 
 goodie4 = Goodie.new(title: "Set of 8 Postcards", price: 12.99)
 goodie4_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg")
-goodie4.photo.attach(io: goodie4_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
+goodie4.photos.attach(io: goodie4_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie4.save
+
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

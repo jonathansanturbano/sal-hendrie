@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'goodies/index'
   get 'goodies/show'
   get 'blogs/index'
