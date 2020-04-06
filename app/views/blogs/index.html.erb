@@ -1,8 +1,5 @@
 <% provide(:title, 'Blog') %>
 <div class="text-center">
-
-  <h1 class="page-intro">Welcome's to Sal Hendrie's notepad</h1>
-
   <div class="blog-cards">
     <% @blogs.each do |blog| %>
     <%= link_to blog_path(blog) do %>
