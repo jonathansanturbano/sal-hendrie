@@ -6,6 +6,7 @@
   // transform: rotate(180deg);
   position: sticky;
   top: 0;
+  z-index: 1;
 
   img{
     vertical-align: middle;
@@ -15,7 +16,6 @@
     object-fit: cover;
     object-position: 0 78%;
     transform: rotate(180deg);
-    z-index: 1;
   }
 }
 

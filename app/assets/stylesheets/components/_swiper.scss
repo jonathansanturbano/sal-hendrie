@@ -1,6 +1,14 @@
 .swiper-container {
-  width: 1000px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
+}
+
+#swipe-container{
+  z-index: 0;
+}
+
+#swipe-container{
+  z-index: 0;
 }
 
 .swiper-slide {
@@ -21,4 +29,8 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+#swipe-slide{
+  z-index: 0;
 }

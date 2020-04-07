@@ -4,6 +4,7 @@ const initSwiper = () => {
   var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
     speed: 1000,
+    loop: true,
     autoplay: {
             delay: 2500,
             disableOnInteraction: false,
@@ -14,10 +15,10 @@ const initSwiper = () => {
     },
 
     // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
 
     // And if we need scrollbar
   })

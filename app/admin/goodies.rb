@@ -1,5 +1,5 @@
 ActiveAdmin.register Goodie do
-  permit_params :title, :quantity, :price
+  permit_params :title, :quantity, :price, photos: []
 
   index do
     selectable_column
@@ -18,6 +18,7 @@ ActiveAdmin.register Goodie do
     f.inputs "Goodie" do
       f.input :title
       f.input :quantity
+      f.input :price
     end
     f.inputs "Photos" do
       f.input :photos, as: :file, input_html: { multiple: true }
