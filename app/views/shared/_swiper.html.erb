@@ -1,7 +1,10 @@
 <div class="swiper-container" id="swipe-container">
     <div class="swiper-wrapper" id="swipe-wrapper">
       <% @homephotos.each do |homephoto| %>
-        <div class="swiper-slide" id="swipe-slide"><%= cl_image_tag homephoto.photo.key %></div>
+        <div class="swiper-slide" id="swipe-slide"><%= cl_image_tag homephoto.photo.key, :transformation=>[
+  {:aspect_ratio=>"4:3", :crop=>"pad"},
+  {:width=>"auto", :dpr=>"auto", :crop=>"pad"}
+  ] %></div>
       <% end %>
     </div>
     <!-- Add Pagination -->

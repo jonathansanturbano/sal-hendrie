@@ -5,17 +5,19 @@ ActiveAdmin.register Homephoto do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :photo
+  permit_params :order, :photo
 
   index do
     column :created_at
     column :updated_at
+    column :order
     actions
   end
 
   form do |f|
-    f.inputs "Photo" do
+    f.inputs "Photo and Order" do
       f.input :photo, as: :file
+      f.input :order
     end
     f.actions
   end

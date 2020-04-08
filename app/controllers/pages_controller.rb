@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @homephotos = Homephoto.all
+    @homephotos = Homephoto.all.order(:order)
   end
 
   def bio
