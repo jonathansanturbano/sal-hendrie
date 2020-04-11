@@ -1,7 +1,9 @@
 .goodie-cards{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  width: fit-content;
+  margin: auto;
 }
 
 .goodie-card{

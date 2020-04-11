@@ -1,10 +1,18 @@
 <% provide(:title, 'FanArt') %>
-<!-- Add submit fan art section -->
-<div class="fanart-cards">
-  <% @fanarts.each do |fanart| %>
-    <div class="fanart-card">
-    <%= cl_image_tag fanart.photo.key, height: 200, width: 280, crop: :fill %>
-    <p><%= fanart.author%></p>
+
+<div class="swiper-container" id="swipe-container">
+    <div class="swiper-wrapper" id="swipe-wrapper">
+      <% @fanarts.each do |fanart| %>
+        <div class="swiper-slide swipe-slide">
+          <%= cl_image_tag fanart.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+          <p class="fanart-author"><%= fanart.author%></p>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+<!--     <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
 </div>
