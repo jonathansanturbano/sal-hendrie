@@ -1,6 +1,7 @@
 .bio-description{
   text-align: justify;
   margin: 1rem 0;
+  text-align: justify;
 }
 
 
@@ -20,9 +21,19 @@
     font-style: italic;
     padding: 1rem;
   }
-
-  p{
-    text-align: justify;
-  }
 }
 
+@media (min-width: 992px) {
+  .illustrator-card{
+      display: flex;
+
+    img{
+      height: fit-content;
+      align-self: center;
+    }
+  }
+
+    .bio-description{
+      margin: 1rem 0 1rem 1rem;
+  }
+}

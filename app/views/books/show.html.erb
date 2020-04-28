@@ -1,0 +1,34 @@
+<div class="text-center">
+    <h2 class="book-title"><%= @book.title %></h2>
+  <div class="adaptive-description">
+    <%= image_tag 'boyandtoad.jpg', size: "264x196" %>
+    <p class="book-description"><%= @book.description %></p>
+  </div>
+  <div class="my-3">----------------------</div>
+  <h3>Book Details</h3>
+  <div class="book-details">
+    <div class="book-detail">
+      <p>Price</p>
+      <p><%= @book.price%>$</p>
+    </div>
+    <div class="book-detail">
+      <p>Material</p>
+      <p><%= @book.material%></p>
+    </div>
+    <div class="book-detail">
+      <p>Ages</p>
+      <p><%= @book.age%></p>
+    </div>
+    <div class="book-detail">
+      <p>Dimensions</p>
+      <p><%= @book.size%></p>
+    </div>
+    <div class="book-detail">
+      <p>Color scheme</p>
+      <p><%= @book.color%></p>
+    </div>
+  </div>
+  <%= link_to do %>
+  <div class="button" id="button-book">Purchase</div>
+  <% end %>
+</div>

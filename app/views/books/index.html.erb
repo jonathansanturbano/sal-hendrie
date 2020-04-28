@@ -9,9 +9,12 @@
           <h3><%= book.title %><span class="badge">  ($<%= book.price %>) </span></h3>
           <p class="book-year"><%= book.year %></p>
           <p class="book-description"><%= book.description %></p>
-          <div class="button" id="button-book">Buy Now</div>
+          <%= link_to book_path(book) do %>
+          <div class="button" id="button-book">Book Details</div>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
+  <p class=my-3>The audio book is available on <span><%= link_to "Audible" %></span></p>
 </div>
