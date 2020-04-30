@@ -49,7 +49,7 @@ goodie3_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg"
 goodie3.photos.attach(io: goodie3_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie3.save
 
-goodie4 = Goodie.new(title: "Set of 8 Postcards", price: 12.99)
+goodie4 = Goodie.new(title: "Set of 10 Postcards", price: 12.99)
 goodie4_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg")
 goodie4.photos.attach(io: goodie4_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie4.save

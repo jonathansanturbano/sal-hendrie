@@ -27,6 +27,7 @@ ActiveAdmin.register Book do
       f.input :material
       f.input :year
       f.input :price
+      f.input :pages
     end
     f.inputs "Photos" do
       f.input :photos, as: :file, input_html: { multiple: true }
