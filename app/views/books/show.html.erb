@@ -1,10 +1,16 @@
 <div class="text-center">
     <h2 class="book-title"><%= @book.title %></h2>
-  <div class="adaptive-description">
-    <!-- Need to do the Swiper but need to fix Cloudinary upload. the JS is done with conditional load if "book-details" class exists but need to implement -->
-    <%= image_tag 'boyandtoad.jpg', size: "264x196" %>
+    <div class="swiper-container my-4" id="swipe-container">
+        <div class="swiper-wrapper" id="swipe-wrapper">
+          <% @book.photos.each do |photo| %>
+            <div class="swiper-slide swipe-slide">
+                <%= cl_image_tag photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+            </div>
+          <% end %>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
     <p class="book-description"><%= @book.description %></p>
-  </div>
   <div class="my-3">----------------------</div>
   <h3>Book Details</h3>
   <div class="book-details">
@@ -30,6 +36,6 @@
     </div>
   </div>
   <%= link_to do %>
-  <div class="button" id="button-book">Purchase</div>
+    <div class="button">Purchase</div>
   <% end %>
 </div>

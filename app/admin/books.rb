@@ -1,5 +1,5 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :size, :color, :age, :material, :pages, :year, :price
+  permit_params :title, :description, :size, :color, :age, :material, :pages, :year, :price, photos: []
 
   index do
     selectable_column

@@ -13,19 +13,11 @@
   }
 }
 
-.adaptive-description{
-  display: block;
-
-  img{
-    margin-bottom: 1rem;
-  }
-}
-
 .book-title{
-  margin: 1.6rem auto;
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-color: $yellow;
+  margin: 0 auto 2rem auto;
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
@@ -39,13 +31,6 @@
   .book-details{
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem 3rem;
-  }
-  .adaptive-description{
-    display: flex;
-
-    img{
-      margin: 0 1rem;
-    }
   }
 }
 
