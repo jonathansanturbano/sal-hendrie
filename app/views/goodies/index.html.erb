@@ -3,11 +3,13 @@
   <div class="goodie-cards">
 
     <% @goodies.each do |goodie| %>
-      <div class="goodie-card">
-        <%= cl_image_tag goodie.photos.first.key, size:"250x250" %>
-        <h3><%= goodie.title %></h3>
-        <p>$<%= goodie.price %></p>
-      </div>
+      <%= link_to goody_path(goodie) do %>
+        <div class="goodie-card">
+          <%= cl_image_tag goodie.photos.first.key, size:"250x250" %>
+          <h3><%= goodie.title %></h3>
+          <p>$<%= goodie.price %></p>
+        </div>
+      <% end %>
     <% end %>
 
   </div>

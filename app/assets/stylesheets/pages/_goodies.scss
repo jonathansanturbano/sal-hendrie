@@ -4,6 +4,10 @@
   grid-gap: 2rem;
   width: fit-content;
   margin: auto;
+
+  a{
+    color: $body-color;
+  }
 }
 
 .goodie-card{

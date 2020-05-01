@@ -1,2 +1,14 @@
-<h1>Goodies#show</h1>
-<p>Find me in app/views/goodies/show.html.erb</p>
+<div class="text-center">
+    <h2 class="book-title"><%= @goodie.title %></h2>
+                <%= cl_image_tag @goodie.photos.first.key, :width=>270, :crop=>"scale" %>
+  <div class="my-3">----------------------</div>
+  <h3>Goodie Details</h3>
+    <div class="book-detail">
+      <p>Price</p>
+      <p><%= @goodie.price%>$</p>
+    </div>
+  </div>
+  <%= link_to do %>
+    <div class="button">Purchase</div>
+  <% end %>
+</div>
