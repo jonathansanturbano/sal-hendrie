@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def bio
     @illustrators = Illustrator.all
   end
+
+  def basket
+  end
 end

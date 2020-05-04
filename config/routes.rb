@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'blogs/show'
   root to: 'pages#home'
   get '/bio', to: 'pages#bio', as: 'bio'
+  get '/basket', to: 'pages#basket', as: 'basket'
   # resources :events, only: [:index]
   resources :books, only: [:index, :show]
 

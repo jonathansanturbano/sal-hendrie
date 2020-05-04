@@ -1,0 +1,10 @@
+.basket-headers{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 2px black;
+}
+
+.basket-header{
+  list-style: none;
+  font-weight: bold;
+}
