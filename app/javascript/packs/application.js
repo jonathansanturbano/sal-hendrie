@@ -3,10 +3,17 @@ import { initModalOnClick } from '../components/modal';
 import { initSwiper } from '../components/swiper';
 // import { initCart } from '../components/cart';
 
+// STORING ON LOCALSTORAGE
+
 const cart = document.querySelector('.buy')
 const cartNumber = document.querySelector('.cart-number')
-const product = document.querySelector('.product')
-const price = document.querySelector('.product-price')
+const product = document.querySelector('.product').textContent
+const price = document.querySelector('.product-price').textContent
+
+let productDetails = {
+  price: parseFloat(price),
+  quantity: 1,
+}
 
 initModalOnClick();
 initSwiper();
@@ -44,18 +51,26 @@ function setItems() {
   let cartItems = localStorage.getItem('productsInCart')
   cartItems = JSON.parse(cartItems)
   if (cartItems != null) {
-    if(cartItems[product.textContent] == undefined){
+    if(cartItems[product] == undefined){
       cartItems = {
         ...cartItems,
-        [product.textContent]: 1
+        [product]: productDetails
       }
     } else {
-      cartItems[product.textContent] += 1;
+      cartItems[product].quantity += 1;
     }
   } else {
     cartItems = {
-      [product.textContent]: 1
+      [product]: productDetails
     }
   }
   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
+
+// DISPLAYING ON BASKET PAGE
+function displayBasket() {
+  let cartItems = localStorage.getItem('productsInCart')
+  console.log(Object.entries(cartItems))
+}
+
+displayBasket();

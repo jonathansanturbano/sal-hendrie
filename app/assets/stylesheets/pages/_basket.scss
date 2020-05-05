@@ -2,9 +2,16 @@
   display: flex;
   justify-content: space-around;
   border-bottom: solid 2px black;
+  padding: 0;
 }
 
 .basket-header{
   list-style: none;
   font-weight: bold;
+}
+
+.item-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
 }
