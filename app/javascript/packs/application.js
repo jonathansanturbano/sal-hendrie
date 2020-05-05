@@ -5,23 +5,19 @@ import { initSwiper } from '../components/swiper';
 
 // STORING ON LOCALSTORAGE
 
-const cart = document.querySelector('.buy')
-const cartNumber = document.querySelector('.cart-number')
-const product = document.querySelector('.product').textContent
-const price = document.querySelector('.product-price').textContent
-
-let productDetails = {
-  price: parseFloat(price),
-  quantity: 1,
+if (document.querySelector('.buy')) {
+  const cart = document.querySelector('.buy')
+  cart.addEventListener('click', () => {
+    cartNumbers();
+  })
 }
+
+const cartNumber = document.querySelector('.cart-number')
 
 initModalOnClick();
 initSwiper();
 onLoadCartNumbers();
 
-cart.addEventListener('click', () => {
-  cartNumbers();
-})
 
 function onLoadCartNumbers() {
   let productNumbers = localStorage.getItem('cartNumbers');
@@ -36,7 +32,6 @@ function onLoadCartNumbers() {
 function cartNumbers() {
   let productNumbers = localStorage.getItem('cartNumbers');
   productNumbers = parseInt(productNumbers)
-
   if( productNumbers ) {
     localStorage.setItem('cartNumbers', productNumbers + 1)
     cartNumber.textContent = (productNumbers + 1)
@@ -49,6 +44,12 @@ function cartNumbers() {
 
 function setItems() {
   let cartItems = localStorage.getItem('productsInCart')
+  const product = (document.querySelector('.product')).textContent
+  const price = document.querySelector('.product-price').textContent
+  let productDetails = {
+    price: parseFloat(price),
+    quantity: 1,
+  }
   cartItems = JSON.parse(cartItems)
   if (cartItems != null) {
     if(cartItems[product] == undefined){
@@ -69,8 +70,28 @@ function setItems() {
 
 // DISPLAYING ON BASKET PAGE
 function displayBasket() {
+  const content = document.querySelector('.basket-content')
   let cartItems = localStorage.getItem('productsInCart')
-  console.log(Object.entries(cartItems))
+  cartItems = JSON.parse(cartItems)
+  for (let [key, value] of Object.entries(cartItems)) {
+    let htmlInput =  `
+      <div class="item-grid">
+        <div>
+          ${key}
+        </div>
+        <div>
+          <span class="quantity-toggle" id="minus">-</span>
+          ${value.quantity}
+          <span class="quantity-toggle" id="plus">+</span>
+        </div>
+        <div>
+          ${value.price * value.quantity}
+        </div>
+      </div>
+    </div>
+    `
+    content.insertAdjacentHTML("afterbegin", htmlInput)
+  }
 }
 
 displayBasket();
