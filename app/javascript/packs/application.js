@@ -95,3 +95,17 @@ function displayBasket() {
 }
 
 displayBasket();
+
+// function toggleQuantity() {
+//   let minus = document.querySelectorAll("#minus")
+//   let plus = document.querySelectorAll("#plus")
+//   console.log(minus)
+//   console.log(plus)
+//   minus.forEach(element){
+//     element.addEventListener('click', function(){
+//       console.log(element.text_node)
+//     })
+//   }
+// }
+
+// toggleQuantity();
