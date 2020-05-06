@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/bio', to: 'pages#bio', as: 'bio'
   get '/basket', to: 'pages#basket', as: 'basket'
-  # resources :events, only: [:index]
   resources :books, only: [:index, :show]
 
   resources :contacts, only: [:new, :create]
-  # resources :blogs, only: [:index, :show]
   resources :fanarts, only: [:index]
   resources :goodies, only: [:index, :show]
+  resources :orders, only: [:new, :create, :show]
+
+  # TO ADD BACK BLOGS AND EVENTS
+  # resources :blogs, only: [:index, :show]
+  # resources :events, only: [:index]
 end
