@@ -1,5 +1,8 @@
-<div class="swiper-container" id="swipe-container">
-    <div class="swiper-wrapper" id="swipe-wrapper">
+<!-- <div class="swiper-container" id="swipe-container">
+    <div class="swiper-wrapper" id="swipe-wrapper"> -->
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
       <% @homephotos.each do |homephoto| %>
         <div class="swiper-slide swipe-slide">
             <%= cl_image_tag homephoto.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
@@ -10,6 +13,6 @@
     <div class="swiper-pagination"></div>
 
     <!-- If we need navigation buttons -->
-<!--     <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>

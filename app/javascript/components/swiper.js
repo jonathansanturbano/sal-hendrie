@@ -1,13 +1,16 @@
 import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
 const initSwiper = () => {
   if (document.querySelector('.fanart-author')) {
+    console.log('fanart');
+
     var fanSwiper = new Swiper ('.swiper-container', {
       // Optional parameters
       speed: 1000,
       loop: true,
       roundLengths: true,
-      spaceBetween: 200,
+      // spaceBetween: 200,
       autoplay: {
               delay: 2500,
               disableOnInteraction: false,
@@ -27,35 +30,33 @@ const initSwiper = () => {
       // And if we need scrollbar
     })
   }
+
   if (document.querySelector('.button').textContent === 'ORDER SIGNED BOOKS') {
-    var homeSwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
+    console.log('hello');
+    var swiper = new Swiper('.swiper-container', {
       speed: 1000,
       loop: true,
-      roundLengths: true,
-      spaceBetween: 200,
+      spaceBetween: 30,
+      centeredSlides: true,
       autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-      // If we need pagination
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       },
-
-      // Navigation arrows
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
-
-      // And if we need scrollbar
-    })
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
   }
+
   if (document.querySelector('.book-details')) {
     var homeSwiper = new Swiper ('.swiper-container', {
       // Optional parameters
-      speed: 1000,
+      // speed: 1000,
       loop: true,
       roundLengths: true,
       spaceBetween: 200,

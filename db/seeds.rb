@@ -55,3 +55,4 @@ goodie4.photos.attach(io: goodie4_photo, filename: 'Postcards.jpg', content_type
 goodie4.save
 
 User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
