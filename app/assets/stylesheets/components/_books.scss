@@ -1,0 +1,67 @@
+.book{
+  background: $mid-blue;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  padding: 1rem;
+
+  img{
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: right;
+  }
+}
+
+.book-information{
+  padding: 0;
+  text-align: center;
+  position: relative;
+
+  h3{
+    font-weight: bold;
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  p{
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+.book-year{
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+
+
+@media (min-width: 992px){
+  .book{
+    display: flex;
+  }
+  #button-book{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+  .book-information{
+    padding: 0 0 0 1rem;
+    text-align: left;
+
+    h3{
+      padding: 0;
+      margin: 0;
+    }
+
+    p{
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .book-description{
+    text-align: justify;
+    font-size: 1.2rem;
+  }
+}

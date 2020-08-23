@@ -1,0 +1,20 @@
+<% provide(:title, 'Books') %>
+
+<div class="text-center">
+  <div class="books">
+    <% @books.each do |book| %>
+      <div class="book">
+        <%= image_tag 'boyandtoad.jpg', size: "240x180" %>
+        <div class="book-information">
+          <h3><%= book.title %><span class="badge">  ($<%= book.price %>) </span></h3>
+          <p class="book-year"><%= book.year %></p>
+          <p class="book-description"><%= book.description %></p>
+          <%= link_to book_path(book) do %>
+          <div class="button" id="button-book">Book Details</div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <p class=my-3>The audio book is available on <span><%= link_to "Audible" %></span></p>
+</div>

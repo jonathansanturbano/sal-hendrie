@@ -1,0 +1,74 @@
+.home-button{
+  text-align: center;
+  margin: 1rem;
+}
+
+.home{
+  margin: 1rem;
+  text-align: center;
+  color: $yellow;
+  font-size: 2rem;
+  padding: 0.1rem 1rem;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: none;
+    font-size: 2.1rem;
+    color: rgb(177, 160, 1);
+  }
+}
+
+.menu{
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.menu > * {
+  color: $yellow;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.1rem 1rem;
+  border-right: $yellow solid 2px;
+  font-size: 1rem;
+
+  &:hover {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(177, 160, 1);
+  }
+}
+
+.menu > *:last-child {
+  border: none;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .menu {
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .menu {
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .menu {
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .menu {
+  }
+}

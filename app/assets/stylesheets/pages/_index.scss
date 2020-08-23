@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "bio";
+@import "contact";
+@import "blogs";
+@import "fanarts";
+@import "goodies";
+@import "events";
+@import "books";
+@import "basket";
+
+body {
+    margin-bottom: 130px;
+}

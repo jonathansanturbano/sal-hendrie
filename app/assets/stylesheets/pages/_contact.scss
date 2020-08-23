@@ -1,0 +1,17 @@
+.hidden{
+  display: none;
+}
+
+.label{
+  padding: 0.1rem 1.6rem;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.input{
+  background-color: $light-gray;
+  border-radius: 4px;
+}

@@ -1,26 +1,119 @@
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
-
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-
-console.log('Hello World from Webpacker')
-
-
-// ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
 import "bootstrap";
+import { initModalOnClick } from '../components/modal';
+import { initSwiper } from '../components/swiper';
+// import { initCart } from '../components/cart';
+
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+
+// STORING ON LOCALSTORAGE
+
+// if (document.querySelector('.buy')) {
+//   const cart = document.querySelector('.buy')
+//   cart.addEventListener('click', () => {
+//     cartNumbers();
+//   })
+// }
+
+// const cartNumber = document.querySelector('.cart-number')
+
+document.addEventListener('turbolinks:load', () => {
+  initModalOnClick();
+  initSwiper();
+});
+
+// onLoadCartNumbers();
+
+
+// function onLoadCartNumbers() {
+//   let productNumbers = localStorage.getItem('cartNumbers');
+//     productNumbers = parseInt(productNumbers)
+//     if( productNumbers ) {
+//       cartNumber.textContent = productNumbers
+//   } else {
+//     return
+//   }
+// }
+
+// function cartNumbers() {
+//   let productNumbers = localStorage.getItem('cartNumbers');
+//   productNumbers = parseInt(productNumbers)
+//   if( productNumbers ) {
+//     localStorage.setItem('cartNumbers', productNumbers + 1)
+//     cartNumber.textContent = (productNumbers + 1)
+//   } else {
+//     localStorage.setItem('cartNumbers', 1)
+//     cartNumber.textContent = 1
+//   }
+//   setItems();
+// }
+
+// function setItems() {
+//   let cartItems = localStorage.getItem('productsInCart')
+//   const product = (document.querySelector('.product')).textContent
+//   const price = document.querySelector('.product-price').textContent
+//   let productDetails = {
+//     price: parseFloat(price),
+//     quantity: 1,
+//   }
+//   cartItems = JSON.parse(cartItems)
+//   if (cartItems != null) {
+//     if(cartItems[product] == undefined){
+//       cartItems = {
+//         ...cartItems,
+//         [product]: productDetails
+//       }
+//     } else {
+//       cartItems[product].quantity += 1;
+//     }
+//   } else {
+//     cartItems = {
+//       [product]: productDetails
+//     }
+//   }
+//   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+// }
+
+// // DISPLAYING ON BASKET PAGE
+// function displayBasket() {
+//   const content = document.querySelector('.basket-content')
+//   let cartItems = localStorage.getItem('productsInCart')
+//   cartItems = JSON.parse(cartItems)
+//   for (let [key, value] of Object.entries(cartItems)) {
+//     let htmlInput =  `
+//       <div class="item-grid">
+//         <div>
+//           ${key}
+//         </div>
+//         <div>
+//           <span class="quantity-toggle" id="minus">-</span>
+//           ${value.quantity}
+//           <span class="quantity-toggle" id="plus">+</span>
+//         </div>
+//         <div>
+//           ${value.price * value.quantity}
+//         </div>
+//       </div>
+//     </div>
+//     `
+//     content.insertAdjacentHTML("afterbegin", htmlInput)
+//   }
+// }
+
+// displayBasket();
+
+// function toggleQuantity() {
+//   let minus = document.querySelectorAll("#minus")
+//   let plus = document.querySelectorAll("#plus")
+//   console.log(minus)
+//   console.log(plus)
+//   minus.forEach(element){
+//     element.addEventListener('click', function(){
+//       console.log(element.text_node)
+//     })
+//   }
+// }
+
+// toggleQuantity();
