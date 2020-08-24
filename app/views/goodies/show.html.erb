@@ -8,5 +8,5 @@
       <p><span class="product-price"><%= @goodie.price%></span>$</p>
     </div>
   </div>
-  <div class="button buy">Add to Cart</div>
+  <%= link_to "Add to Cart", goody_basket_items_path(@goodie), method: :create %>
 </div>

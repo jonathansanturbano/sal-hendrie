@@ -22,18 +22,34 @@
     </div>
   </div>
 </div> -->
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th>
-    <th>Price</th>
-  </tr>
-  <% @basket.items.each do |item| %>
-    <td><%= item.title %></td>
-    <td>4</td>
-    <td><%= item.price %></td>
-  <% end %>
-</table>
+
+<% if @basket.basketItems.count == 0 %>
+  <div>Your basket is empty</div>
+<% else %>
+  <table>
+    <tr>
+      <th></th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <% @basket.basketItems.each do |item| %>
+      <tr>
+        <td><%= cl_image_tag(item.buyable.photos.first.key, :width => 90,
+        :height => 130, :crop => :fill )%></td>
+        <td><%= item.buyable.title %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.buyable.price %></td>
+        <td>
+          <%= link_to basket_item_path(item), method: :delete, data: { confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= @basket.price_cents %>
+  <div class="buy button">Confirm</div>
+<% end %>
 
 
-<div class="buy button">Confirm</div>
