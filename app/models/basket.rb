@@ -1,5 +1,6 @@
 class Basket < ApplicationRecord
   belongs_to :user
-  has_many :books
-  has_many :goodies
+  has_many :basketItems
+  has_many :books, through: :basketItems
+  has_many :goodies, through: :basketItems
 end

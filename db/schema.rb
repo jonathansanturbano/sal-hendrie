@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_153712) do
+ActiveRecord::Schema.define(version: 2020_08_24_121431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,14 +62,23 @@ ActiveRecord::Schema.define(version: 2020_08_23_153712) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "basket_items", force: :cascade do |t|
+    t.string "buyable_type", null: false
+    t.bigint "buyable_id", null: false
+    t.integer "quantity", default: 1
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basket_id", null: false
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
+    t.index ["buyable_type", "buyable_id"], name: "index_basket_items_on_buyable_type_and_buyable_id"
+  end
+
   create_table "baskets", force: :cascade do |t|
     t.integer "quantity"
     t.string "price_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.text "items", default: [], array: true
-    t.string "item"
     t.string "status", default: "adding"
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
@@ -147,5 +156,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_153712) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "basket_items", "baskets"
   add_foreign_key "baskets", "users"
 end
