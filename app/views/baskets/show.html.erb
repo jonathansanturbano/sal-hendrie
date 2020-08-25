@@ -22,34 +22,45 @@
     </div>
   </div>
 </div> -->
+<div class="text-center">
 
-<% if @basket.basketItems.count == 0 %>
-  <div>Your basket is empty</div>
-<% else %>
-  <table>
-    <tr>
-      <th></th>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
-    </tr>
-    <% @basket.basketItems.each do |item| %>
-      <tr>
-        <td><%= cl_image_tag(item.buyable.photos.first.key, :width => 90,
-        :height => 130, :crop => :fill )%></td>
-        <td><%= item.buyable.title %></td>
-        <td><%= item.quantity %></td>
-        <td><%= item.buyable.price %></td>
-        <td>
-          <%= link_to basket_item_path(item), method: :delete, data: { confirm: "Are you sure?"} do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-  <%= @basket.price_cents %>
-  <div class="buy button">Confirm</div>
-<% end %>
+  <% if @basket.basketItems.count == 0 %>
+    <div>Your basket is empty</div>
+
+  <% else %>
+      <% @basket.basketItems.each do |item| %>
+        <div class="purchase-card">
+          <div><%= cl_image_tag(item.buyable.photos.first.key, :width => 150,
+          :height => 150, :crop => :fill )%></div>
+          <div><%= item.buyable.title %></div>
+          <div>Quantity: <%= item.quantity %></div>
+          <div><%= item.total_price_item %>€</div>
+          <div class="delete-icon">
+            <%= link_to basket_item_path(item), method: :delete do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+      </div>
+      <% end %>
+    <p><strong>Total Price: </strong><%= @basket.price_cents.to_f / 100 %>€</p>
+  <% end %>
+
+  <form id="myform" action="/checkout" method="post">
+    <button type="button"
+      data-vp-publickey="tqrYWcwXqa+ySEqca8TVPcLlNVXzcbuKl9L9d80pvKE="
+      data-vp-baseurl="https://demo.vivapayments.com"
+      data-vp-lang="en"
+      data-vp-disablewallet
+      data-vp-amount="<%= @basket.price_cents %>"
+      data-vp-background-color="#E1A509"
+      data-vp-hover-background-color="#777777"
+      data-vp-text="Purchase"
+      data-vp-description="Your Order">
+    </button>
+  </form>
+
+</div>
 
 
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://demo.vivapayments.com/web/checkout/js"></script>

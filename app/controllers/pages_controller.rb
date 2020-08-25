@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:home, :bio]
+  skip_before_action :verify_authenticity_token, only: :checkout
+
 
   def home
     @homephotos = Homephoto.all.order(:order)
@@ -7,5 +9,10 @@ class PagesController < ApplicationController
 
   def bio
     @illustrators = Illustrator.all
+  end
+
+  def checkout
+    @basket.update(status: "approved")
+    raise
   end
 end

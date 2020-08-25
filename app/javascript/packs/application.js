@@ -1,6 +1,7 @@
 import "bootstrap";
 import { initModalOnClick } from '../components/modal';
 import { initSwiper } from '../components/swiper';
+import { initCart } from '../components/cart';
 // import { initCart } from '../components/cart';
 
 require("@rails/ujs").start()
@@ -17,11 +18,16 @@ require("channels")
 //   })
 // }
 
-// const cartNumber = document.querySelector('.cart-number')
+
+// addButton.addEventListener('click', (e) => {
+//   console.log(e);
+// })
 
 document.addEventListener('turbolinks:load', () => {
   initModalOnClick();
   initSwiper();
+  if (document.querySelector('.add'))
+  initCart();
 });
 
 // onLoadCartNumbers();
