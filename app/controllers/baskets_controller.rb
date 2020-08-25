@@ -5,8 +5,9 @@ class BasketsController < ApplicationController
   def show
     @basket.price_cents = 0.0
     @basket.basketItems.each do |item|
-      @basket.price_cents = @basket.price_cents.to_f + item.buyable.price
+      @basket.price_cents = @basket.price_cents.to_f + item.total_price_item
     end
+    @basket.price_cents = (@basket.price_cents.to_f * 100).to_i
   end
 
   def update

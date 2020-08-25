@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
   def set_basket
-    @basket = Basket.find_by(user_id: current_user, status: "adding") || Basket.create(user_id: current_user, status: "adding") if user_signed_in?
+    return if !user_signed_in?
+    @basket = Basket.find_by(user_id: current_user.id, status: "adding") || Basket.create(user_id: current_user.id, status: "adding")
+    @basket.basketItems.each do |item|
+      @basket.quantity += item.quantity
+    end
   end
 end

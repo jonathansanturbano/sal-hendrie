@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :baskets, only: [:create, :show]
   resources :basket_items, only: [:destroy]
+
+  post "/checkout", to: "pages#checkout"
 end

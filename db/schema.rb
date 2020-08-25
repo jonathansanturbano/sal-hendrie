@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_121431) do
+ActiveRecord::Schema.define(version: 2020_08_25_121826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,12 +69,13 @@ ActiveRecord::Schema.define(version: 2020_08_24_121431) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "basket_id", null: false
+    t.float "total_price_item"
     t.index ["basket_id"], name: "index_basket_items_on_basket_id"
     t.index ["buyable_type", "buyable_id"], name: "index_basket_items_on_buyable_type_and_buyable_id"
   end
 
   create_table "baskets", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.string "price_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
