@@ -9,6 +9,14 @@
   border-radius: 2px;
 }
 
+.item-updater{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 1rem;
+}
+
 @media (min-width: 992px){
   .purchase-card {
     display: flex;

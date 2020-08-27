@@ -10,15 +10,15 @@ Rails.application.routes.draw do
   resources :fanarts, only: [:index]
   resources :blogs, only: [:index, :show]
   resources :books, only: [:index, :show] do
-    resources :basket_items, only: [:create, :update]
+    resources :basket_items, only: [:create]
   end
   resources :events, only: [:index]
   resources :goodies, only: [:index, :show] do
-    resources :basket_items, only: [:create, :update]
+    resources :basket_items, only: [:create]
   end
   resources :contacts, only: [:new, :create]
   resources :baskets, only: [:create, :show]
-  resources :basket_items, only: [:destroy]
+  resources :basket_items, only: [:destroy, :update]
 
   post "/checkout", to: "pages#checkout"
 end

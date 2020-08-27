@@ -20,6 +20,16 @@ class BasketItemsController < ApplicationController
     end
   end
 
+  def update
+    basket_item = BasketItem.find(params[:id])
+    if params[:commit] == "-"
+      basket_item.update(quantity: basket_item.quantity - 1, total_price_item: basket_item.total_price_item - basket_item.buyable.price)
+    else
+      basket_item.update(quantity: basket_item.quantity + 1, total_price_item: basket_item.total_price_item + basket_item.buyable.price)
+    end
+    redirect_to basket_path
+  end
+
   def destroy
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
