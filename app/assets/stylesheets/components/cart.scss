@@ -11,6 +11,13 @@
   height: 3.9rem;
   width: 3.9rem;
   margin: 12px;
+  transition: color .5s;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(112, 111, 129);
+    font-style: bold;
+  }
 }
 
 @media (min-width: 992){
