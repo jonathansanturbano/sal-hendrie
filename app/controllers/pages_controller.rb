@@ -13,6 +13,5 @@ class PagesController < ApplicationController
 
   def checkout
     @basket.update(status: "approved")
-    raise
   end
 end
