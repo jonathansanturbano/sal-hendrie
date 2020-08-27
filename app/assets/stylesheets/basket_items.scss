@@ -2,17 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .purchase-card {
-  background-color: $mid-blue;
+  background-color: rgba(210, 216, 229, 0.6);
   padding: 1rem;
   position: relative;
   margin: 1rem;
   border-radius: 2px;
+  box-shadow: 2px 3px 2px 0 rgb(210, 200, 229);
+
+  & > div {
+    margin: 1rem 0;
+  }
+
+  & > div:last-child {
+    margin: 0;
+  }
 }
 
 @media (min-width: 992px){
   .purchase-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     div {
@@ -26,4 +35,8 @@
   top: 10px;
   right: 10px;
   text-align: right;
+}
+
+.basket-photo {
+  box-shadow: 2px 3px 2px 0 #d2c8e5;
 }
