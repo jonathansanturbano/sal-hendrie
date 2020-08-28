@@ -4,12 +4,12 @@
     <div>Your basket is empty</div>
 
   <% else %>
-      <% @basket.basketItems.each do |item| %>
+      <% basketItems = @basket.basketItems.sort_by { |item| item.created_at } %>
+      <% basketItems.each do |item| %>
         <div class="purchase-card">
-          <div><%= cl_image_tag(item.buyable.photos.first.key, :width => 150,
-          :height => 150, :crop => :fill )%></div>
+          <%= cl_image_tag(item.buyable.photos.first.key, :width => 150, :height => 150, :crop => :fill )%>
           <div><%= item.buyable.title %></div>
-          <div class="d-flex justify-center">
+          <div class="d-flex justify-content-center align-items-center">
             <span>
               <%= simple_form_for(item) do |f| %>
                  <%= f.input :quantity, :as => "hidden", :value => "-1" %>
@@ -27,7 +27,7 @@
           <div><%= item.total_price_item %>€</div>
           <div class="delete-icon">
             <%= link_to basket_item_path(item), method: :delete do %>
-              <i class="fas fa-trash"></i>
+              <i class="fas fa-trash" style="font-size: 1.5rem; color: grey"></i>
             <% end %>
           </div>
       </div>

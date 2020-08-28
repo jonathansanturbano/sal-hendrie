@@ -6,8 +6,15 @@
   padding: 1rem;
   position: relative;
   margin: 1rem;
-  border-radius: 2px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgb(179, 193, 217);
+
+  img {
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px rgb(179, 193, 217);
+  }
 }
+
 
 .item-updater{
   width: 2rem;
@@ -20,7 +27,7 @@
 @media (min-width: 992px){
   .purchase-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     div {
