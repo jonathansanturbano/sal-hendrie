@@ -1,3 +1,4 @@
+
 .devise-title {
   text-decoration: underline;
   text-underline-position: under;
@@ -7,20 +8,22 @@
   margin: 2rem 0;
 }
 
-.custom-inputs {
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-boxes {
   text-align: center;
+  width: min-content;
+  padding: 1rem;
   border-radius: 4px;
 }
 
-@media (min-width: 767px) {
-  .custom-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & > div {
-      width: 50%;
-    }
+@media (min-width: 992px) {
+  .custom-boxes {
+    width: min-content;
+    padding: 1rem 5rem;
   }
 }
