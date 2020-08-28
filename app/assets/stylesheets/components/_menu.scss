@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   height: 90px;
-  position: fixed;
+  position: absolute;
+
 }
 
 .home-button{
@@ -21,18 +22,23 @@
   height: 3.9rem;
   width: 3.9rem;
   margin: 12px;
+  transition: color .5s;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(112, 111, 129);
+    font-style: bold;
+  }
 }
 
 
 @media (min-width: 992px) {
   .icons-setter{
-    top: 111px;
     width: 100vw;
     display: flex;
-    justify-content: space-between;
+    height: 120px;
   }
 }
-
 // .home{
 //   margin: 1rem;
 //   text-align: center;

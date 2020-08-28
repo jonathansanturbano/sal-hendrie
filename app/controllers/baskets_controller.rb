@@ -10,12 +10,12 @@ class BasketsController < ApplicationController
     @basket.price_cents = (@basket.price_cents.to_f * 100).to_i
   end
 
-  def update
-    @basket = Basket.new(basket_params)
-    @basket.items << params[:basket][:item]
-    @basket.update
-    redirect_to root_path
-  end
+  # def update
+  #   @basket = Basket.new(basket_params)
+  #   @basket.items << params[:basket][:item]
+  #   @basket.update
+  #   redirect_to root_path
+  # end
 
   private
 
