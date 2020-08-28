@@ -7,7 +7,7 @@
       <% @basket.basketItems.each do |item| %>
         <div class="purchase-card">
           <div><%= cl_image_tag(item.buyable.photos.first.key, :width => 150,
-          :height => 150, :crop => :fill )%></div>
+          :height => 150, :crop => :fill, class: "basket-photo" )%></div>
           <div><%= item.buyable.title %></div>
           <div class="d-flex justify-center">
             <span>
@@ -36,7 +36,9 @@
   <% end %>
 
   <% unless @basket.basketItems.count == 0 %>
+
     <form id="myform" class="button" action="/checkout" method="post">
+
       <button type="button"
         data-vp-publickey="<%= ENV['VIVA_PUBLISHABLE_KEY'] %>"
         data-vp-baseurl="https://demo.vivapayments.com"
