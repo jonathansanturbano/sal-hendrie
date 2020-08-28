@@ -8,6 +8,6 @@ const initModalOnClick = () => {
   close.addEventListener('click', (event) => {
     modal.style.display = 'none';
   });
-}
+};
 
 export { initModalOnClick };

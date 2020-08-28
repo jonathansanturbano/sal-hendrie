@@ -1,5 +1,13 @@
 <div class="text-center">
-    <%= render 'shared/swiper' %>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @homephotos.each do |homephoto| %>
+            <div class="swiper-slide">
+                <%= cl_image_tag homephoto.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+            </div>
+          <% end %>
+        </div>
+    </div>
   <div class="button">Order Signed Books</div>
 </div>
 

@@ -10,34 +10,25 @@ const initSwiper = () => {
       speed: 1000,
       loop: true,
       roundLengths: true,
-      // spaceBetween: 200,
+      spaceBetween: 200,
       autoplay: {
               delay: 2500,
               disableOnInteraction: false,
             },
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
+    });
 
-      // Navigation arrows
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
+    const intervalID = window.setInterval(nextSlide, 3000);
 
-      // And if we need scrollbar
-    })
+    function nextSlide() {
+      fanSwiper.slideNext(3000);
+    };
   }
 
-  if (document.querySelector('.button').textContent === 'ORDER SIGNED BOOKS') {
-    console.log('hello');
-    var swiper = new Swiper('.swiper-container', {
+  if (document.querySelector('.button').textContent === 'Order Signed Books') {
+    var homeSwiper = new Swiper('.swiper-container', {
       speed: 1000,
       loop: true,
-      spaceBetween: 30,
-      centeredSlides: true,
+      spaceBetween: 300,
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
@@ -51,15 +42,21 @@ const initSwiper = () => {
         prevEl: '.swiper-button-prev',
       },
     });
+
+
+    const intervalID = window.setInterval(nextSlide, 2000);
+
+    function nextSlide() {
+      homeSwiper.slideNext(3000);
+    };
   }
 
   if (document.querySelector('.book-details')) {
-    var homeSwiper = new Swiper ('.swiper-container', {
+    var showSwiper = new Swiper ('.swiper-container', {
       // Optional parameters
-      // speed: 1000,
+      speed: 1000,
       loop: true,
       roundLengths: true,
-      spaceBetween: 200,
       autoplay: {
               delay: 2500,
               disableOnInteraction: false,
@@ -76,7 +73,14 @@ const initSwiper = () => {
       // },
 
       // And if we need scrollbar
-    })
+    });
+
+    const intervalID = window.setInterval(nextSlide, 2000);
+
+    function nextSlide() {
+      showSwiper.slideNext(3000);
+    };
+
   }
 }
 
