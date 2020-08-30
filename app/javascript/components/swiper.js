@@ -57,6 +57,7 @@ const initSwiper = () => {
       speed: 1000,
       loop: true,
       roundLengths: true,
+      spaceBetween: 300,
       autoplay: {
               delay: 2500,
               disableOnInteraction: false,

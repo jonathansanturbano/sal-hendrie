@@ -22,3 +22,12 @@
   color: white;
   border-radius: 50%;
 }
+
+.basket-title {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
+}

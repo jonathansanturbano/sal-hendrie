@@ -1,25 +1,28 @@
 <div class="text-center">
 
   <% if @basket.basketItems.count == 0 %>
-    <div>Your basket is empty</div>
+    <h1 class="basket-title">Your basket is empty</h1>
 
   <% else %>
       <% basketItems = @basket.basketItems.sort_by { |item| item.created_at } %>
       <% basketItems.each do |item| %>
-        <div class="purchase-card">
-          <div><%= cl_image_tag(item.buyable.photos.first.key, :width => 150,
-          :height => 150, :crop => :fill, class: "basket-photo" )%></div>
-          <div><%= item.buyable.title %></div>
-          <div class="d-flex justify-center">
-            <span>
-              <%= simple_form_for(item) do |f| %>
-                 <%= f.input :quantity, :as => "hidden", :value => "-1" %>
-              <%= f.button :submit, '-', class: "item-updater" %>
-              <% end %>
-            </span>
+        <div class="purchase-card" id="item-<%= item.id %>">
+          <%= cl_image_tag(item.buyable.photos.first.key, :width => 150, :height => 150, :crop => :fill )%>
+          <div>
+            <%= item.buyable.title %>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <% unless item.quantity <= 1 %>
+              <span>
+                <%= simple_form_for(item, remote: true) do |f| %>
+                   <%= f.input :quantity, :as => "hidden", :value => "-1" %>
+                <%= f.button :submit, '-', class: "item-updater" %>
+                <% end %>
+              </span>
+            <% end %>
             <p style="white-space: nowrap; margin: 0; align-self: center">Quantity: <%= item.quantity %></p>
             <span>
-              <%= simple_form_for(item) do |f| %>
+              <%= simple_form_for(item, remote: true) do |f| %>
                  <%= f.input :quantity, :as => "hidden", :value => "+1" %>
               <%= f.button :submit , '+', class: "item-updater" %>
               <% end %>
@@ -28,7 +31,7 @@
           <div><%= item.total_price_item %>€</div>
           <div class="delete-icon">
             <%= link_to basket_item_path(item), method: :delete do %>
-              <i class="fas fa-trash"></i>
+              <i class="fas fa-trash" style="font-size: 1.5rem; color: grey"></i>
             <% end %>
           </div>
       </div>
