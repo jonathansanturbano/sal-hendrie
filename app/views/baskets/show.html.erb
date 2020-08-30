@@ -40,7 +40,9 @@
   <% end %>
 
   <% unless @basket.basketItems.count == 0 %>
+
     <form id="myform" class="button" action="/checkout" method="post">
+
       <button type="button"
         data-vp-publickey="<%= ENV['VIVA_PUBLISHABLE_KEY'] %>"
         data-vp-baseurl="https://demo.vivapayments.com"
