@@ -27,7 +27,7 @@ class BasketItemsController < ApplicationController
     else
       basket_item.update(quantity: basket_item.quantity + 1, total_price_item: basket_item.total_price_item + basket_item.buyable.price)
     end
-    redirect_to basket_path
+    redirect_to basket_path(anchor: "item-#{basket_item.id}")
   end
 
   def destroy
