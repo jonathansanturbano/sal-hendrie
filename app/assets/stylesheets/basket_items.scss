@@ -45,6 +45,16 @@
   text-align: right;
 }
 
+.basket-title {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
 .basket-photo {
   box-shadow: 2px 3px 2px 0 #d2c8e5;
+
 }

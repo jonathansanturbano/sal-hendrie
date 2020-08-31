@@ -16,7 +16,7 @@
   <div class="book-details">
     <div class="book-detail">
       <p>Price</p>
-      <p><span class="product-price"><%= @book.price%></span>$</p>
+      <p><span class="product-price"><%= @book.price%></span>€</p>
     </div>
     <div class="book-detail">
       <p>Material</p>
@@ -38,6 +38,7 @@
 
   <%= link_to "Add to Cart", book_basket_items_path(@book), method: :create, class: "button add" %>
 
+<p class="bulk-reminder">For orders in bulk, don't hesitate to reach out <%= link_to "directly", new_contact_path %> for a personalised quote!</p>
 
 
 <!--     <form id="myform" action="/checkout" method="post">

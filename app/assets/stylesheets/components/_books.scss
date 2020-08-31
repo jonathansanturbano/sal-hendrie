@@ -65,3 +65,17 @@
     font-size: 1.2rem;
   }
 }
+
+.bulk-reminder {
+  font-size: 1.2rem;
+  background-color: #dbdbdb;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-style: italic;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgb(179, 193, 217);
+
+  a {
+    text-decoration: underline;
+  }
+}
