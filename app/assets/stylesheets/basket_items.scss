@@ -22,6 +22,7 @@
   border-radius: 50%;
   background-color: blue;
   margin: 1rem;
+  padding: 0;
 }
 
 @media (min-width: 992px){
@@ -41,4 +42,13 @@
   top: 10px;
   right: 10px;
   text-align: right;
+}
+
+.basket-title {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
 }
