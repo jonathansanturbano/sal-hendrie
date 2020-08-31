@@ -1,5 +1,10 @@
 <div class="text-center">
-    <h2 class="book-title product"><%= @book.title %></h2>
+    <h2 class="book-title product">
+      <%= @book.title %>
+      <% if @book.category == "signed" %>
+      (signed)
+      <% end %>
+    </h2>
     <div class="swiper-container my-4" id="swipe-container">
         <div class="swiper-wrapper" id="swipe-wrapper">
           <% @book.photos.each do |photo| %>
