@@ -4,7 +4,7 @@
   <div class="books">
     <% @books.each do |book| %>
       <div class="book">
-        <%= image_tag 'boyandtoad.jpg', size: "240x180" %>
+        <%= cl_image_tag(book.photos.first.key, :width => 240, :height => 180, :crop => "fill") %>
         <div class="book-information">
           <h3><%= book.title %><span class="badge">  ($<%= book.price %>) </span></h3>
           <p class="book-year"><%= book.year %></p>

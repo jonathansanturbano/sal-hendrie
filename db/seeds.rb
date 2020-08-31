@@ -1,7 +1,7 @@
 puts "Deleting all seeds"
 
 Book.destroy_all && Event.destroy_all && Illustrator.destroy_all &&
-Blog.destroy_all && Fanart.destroy_all && Goodie.destroy_all && User.destroy_all if Rails.env.development?
+Blog.destroy_all && Fanart.destroy_all && Goodie.destroy_all && BasketItem.destroy_all && Basket.destroy_all && User.destroy_all if Rails.env.development?
 
 puts "Creating all seeds"
 
@@ -54,5 +54,4 @@ goodie4_photo = File.open(Rails.root + "app/assets/images/Goodies/Postcards.jpg"
 goodie4.photos.attach(io: goodie4_photo, filename: 'Postcards.jpg', content_type: 'image/jpg')
 goodie4.save
 
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+User.create!(email: 'james@brown.com', password: 'abcdef', password_confirmation: 'abcdef') if Rails.env.development?
