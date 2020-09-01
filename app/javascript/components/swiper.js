@@ -6,7 +6,6 @@ const initSwiper = () => {
     console.log('fanart');
 
     var fanSwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
       speed: 1000,
       loop: true,
       roundLengths: true,
