@@ -4,7 +4,6 @@ ActiveAdmin.register Goodie do
   index do
     selectable_column
     column :title
-    column :quantity
     column :price
     column :created_at
     column :updated_at
@@ -17,7 +16,6 @@ ActiveAdmin.register Goodie do
   form do |f|
     f.inputs "Goodie" do
       f.input :title
-      f.input :quantity
       f.input :price
     end
     f.inputs "Photos" do
