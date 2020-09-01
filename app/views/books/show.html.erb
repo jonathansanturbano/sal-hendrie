@@ -5,8 +5,9 @@
       (signed)
       <% end %>
     </h2>
+
     <div class="swiper-container my-4" id="swipe-container">
-        <div class="swiper-wrapper" id="swipe-wrapper">
+        <div class="swiper-wrapper d-flex" id="swipe-wrapper">
           <% @book.photos.each do |photo| %>
             <div class="swiper-slide swipe-slide">
                 <%= cl_image_tag photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
@@ -15,9 +16,13 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
-    <p class="book-description"><%= @book.description %></p>
+
+  <p class="book-description"><%= @book.description %></p>
+
   <div class="my-3">----------------------</div>
+
   <h3>Book Details</h3>
+
   <div class="book-details">
     <div class="book-detail">
       <p>Price</p>
@@ -43,6 +48,6 @@
 
   <%= link_to "Add to Cart", book_basket_items_path(@book), method: :create, class: "button add" %>
 
-<p class="bulk-reminder">For orders in bulk, don't hesitate to reach out <%= link_to "directly", new_contact_path %> for a personalised quote!</p>
+  <p class="bulk-reminder">For orders in bulk, don't hesitate to reach out <%= link_to "directly", new_contact_path %> for a personalised quote!</p>
 
 </div>
