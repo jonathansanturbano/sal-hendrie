@@ -2,7 +2,7 @@ import "bootstrap";
 import { initModalOnClick } from '../components/modal';
 import { initSwiper } from '../components/swiper';
 import { initCart } from '../components/cart';
-// import { initCart } from '../components/cart';
+import 'swiper/swiper-bundle.css';
 
 require("@rails/ujs").start()
 require("turbolinks").start()

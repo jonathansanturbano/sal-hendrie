@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import 'swiper/swiper.scss';
 
 const initSwiper = () => {
   if (document.querySelector('.fanart-author')) {
