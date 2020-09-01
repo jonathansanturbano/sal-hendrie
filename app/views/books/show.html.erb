@@ -7,7 +7,7 @@
     </h2>
 
     <div class="swiper-container my-4" id="swipe-container">
-        <div class="swiper-wrapper d-flex" id="swipe-wrapper">
+        <div class="swiper-wrapper" id="swipe-wrapper">
           <% @book.photos.each do |photo| %>
             <div class="swiper-slide swipe-slide">
                 <%= cl_image_tag photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
